@@ -1,3 +1,5 @@
+% 还是[将数据格式化为字符串或字符向量](https://ww2.mathworks.cn/help/matlab/ref/sprintf.html)
+
 % 学习让字符串换行
 
 days = "Mon Tue Wed Thu Fri Sat Sun";
@@ -19,3 +21,6 @@ t6 = '\f甚至可以换页嗷\f'; % 呜……文档你骗我，所以你说的"�
 fprintf(['\n' t1 t2 t3 t4 t5 t6 '%%'])
 % 用%%打印百分比符号
 % 反斜杠则是\\，这个也跟Py一样
+
+% 只是必须要用fprintf()否则这些特殊字符只会原样打印出来
+
