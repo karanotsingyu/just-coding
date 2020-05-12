@@ -26,11 +26,14 @@ black = BlackIndex(screenNumber);
 ifi = Screen('GetFlipInterval', window); % 1/60 in my Mac
 
 % Setup the text type for the window
-Screen('TextFont', window, 'Ariel');
+% Official bug... WoZuiLe...
+% Maybe, the problem lies on the Font, i.e., 
+% there isn't "Ariel" font in my Mac
+% Screen('TextFont', window, 'Ariel');
 Screen('TextSize', window, 50);
 
 % Get the centre coordinate of the window
-[xCenter, yCenter] = RectCenter(windowsRect);
+[xCenter, yCenter] = RectCenter(windowRect);
 
 % Here we set the initial position of the mouse to a random position on the
 % screen
@@ -59,7 +62,12 @@ while ~KbCheck
     DrawFormattedText(window, textString, 'center', 'center', white);
     
     % Draw a white dot where the mouse cursor is
-    Screen('DrawDots', window, [x y], 10, white, [], 2);
+    % 'dot_type': 0(default) -- square dot; 1 -- circle dot
+    % http://psychtoolbox.org/docs/Screen-DrawDots
+    % Official bug... WoZuiLe...
+    % It seens that parameters after 'colour' is troubled
+    % Oh it's my fault...
+    Screen('DrawDots', window, [x y], 10, white, [], 1);
     
     % Flip to the screen
     Screen('Flip', window);
@@ -69,6 +77,6 @@ end
 % Normal ending
 sca;
 
-disp('------')
-disp([xCenter, yCenter]) %  in my Mac
-disp('------') 
+% disp('------')
+% disp([xCenter, yCenter]) % 640, 400 in my Mac
+% disp('------') 
