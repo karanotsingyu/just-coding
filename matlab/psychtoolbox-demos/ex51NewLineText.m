@@ -22,12 +22,12 @@ Screen('BlendFunction', window, 'GL_SRC_ALPHA', 'GL_ONE_MINUS_SRC_ALPHA');
 % another, and the third with a line space in between. To add line spaces
 % we use the special characters "\n"
 
-line1 = 'Hello World';
-line2 = '\n This is the second line';
-line3 = '\n\n This is the third line';
+line1 = double('Hello World');
+line2 = double('\n 这是第二行');
+line3 = double('\n\n 这是第三行');
 
 % Draw all the text in one go
-Screen('TextSize', window, 70);
+Screen('TextSize', window, 64);
 DrawFormattedText(window, [line1 line2 line3],...
     'center', screenYpixels * 0.25, white);
 
