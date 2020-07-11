@@ -1,13 +1,17 @@
-%% Homework: Roll Calling Program
+%% Homework 01: Roll Calling Program
 
-% 将这个班所有学生的学号，姓名，存储在文件里（2列，n行），制作一个点名小程序。
-% 功能：随机点名，点名后呈现姓名和学号；
-% 点名后弹出输入框，在输入框输入出勤情况（1-出勤，0-缺勤）；
-% 将当日考勤情况（日期、姓名、学号、出勤）记录在文件attendance.txt里。
+% Make a roll calling mini program, according to the student ID, name of
+% our class.
+
+% Randomly pick a name and present the name and ID of the picked student.
+% And then pop an input dialog box where you need type the state of
+% attendence (1 - yes; 0 - no).
+% Finally, output the data in a file.
 
 % !!!CAUTION!!! Only available in version 2019a or hereafter since the script use
 % functions "readmatrix()" and "writecell()" recommend by Matlab official
-% site, which were updated in 2019a
+% site, which were updated in 2019a. (while "xlsread()" and "xlswrite()" is not
+% recommanded)
 
 %% Usage
 

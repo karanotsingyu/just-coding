@@ -4,8 +4,6 @@
 % 点名后弹出输入框，在输入框输入出勤情况（1-出勤，0-缺勤）；
 % 将当日考勤情况（日期、姓名、学号、出勤）记录在文件attendance.txt里。
 
-% % % % % % % 警告：你没有把已点名的学生从临时名单中划去。
-
 %% 随机点名
 
 % 获取学生数量
@@ -15,6 +13,8 @@ student_num = student_roll_size(1);
 index_extracted = randi(student_num);
 % 用这个索引值从矩阵中相应位置调出学生数据
 student_picked = student_roll(index_extracted,:);
+% 将学生从临时名单中划去
+student_roll(index_extracted,:) = [];
 % Defensive debugging
 disp(student_picked)
 
